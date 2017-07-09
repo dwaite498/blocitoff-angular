@@ -1,14 +1,9 @@
 (function() {
-    function HomeCtrl($scope, $firebaseArray) {
-      console.log('loading controller')
-
-      var todoItem = firebase new('https://blocitoffangular.firebaseio.com/')
-
-      $scope.todoItem = $firebaseArray(todoItem);
+    function HomeCtrl() {
+      this.todoitems = Todoitem.all
     }
-
 
     angular
         .module('blocitoffAngular')
-        .controller('HomeCtrl', ['$scope', '$firebaseArray', HomeCtrl]);
+        .controller('HomeCtrl', Todoitem [HomeCtrl]);
 })();
