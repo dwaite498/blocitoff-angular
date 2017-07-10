@@ -3,11 +3,13 @@
     var ref = firebase.database().ref().child("todoitems");
     var todoitems = $firebaseArray(ref);
 
-    var Todoitem = {};
+    function addtodo (name) {
+      todoitems.$add(name);
+    }
 
-    Todoitem.all = todoitems;
-
-    return Todoitem;
+    return {
+      all: todoitems
+    };
   }
 
   angular

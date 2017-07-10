@@ -1,9 +1,10 @@
 (function() {
-    function HomeCtrl() {
-      this.todoitems = Todoitem.all
+    function HomeCtrl(Todoitem) {
+      home = this
+      this.todoItem = Todoitem.all;
     }
 
     angular
         .module('blocitoffAngular')
-        .controller('HomeCtrl', Todoitem [HomeCtrl]);
+        .controller('HomeCtrl',  ['Todoitem', HomeCtrl]);
 })();

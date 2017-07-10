@@ -2,7 +2,6 @@
 
 <p>Testing list of task items<p>
 
-<ul>
-  <li ng-repeat="item in home.todoitems track by $index">
-    <p>{{ items.name }}</p>
+<ul ng-repeat="items in home">
+  <li>{{ items }}</li>
 </ul>
