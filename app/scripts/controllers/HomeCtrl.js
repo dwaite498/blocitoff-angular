@@ -1,10 +1,9 @@
 (function() {
-    function HomeCtrl(Todoitem) {
-      home = this
-      this.todoItem = Todoitem.all;
+    function HomeCtrl($scope, TodoItem) {
+      $scope.todoItem = TodoItem.all;
     }
 
     angular
         .module('blocitoffAngular')
-        .controller('HomeCtrl',  ['Todoitem', HomeCtrl]);
+        .controller('HomeCtrl',  ['$scope', 'TodoItem', HomeCtrl]);
 })();

@@ -1,5 +1,5 @@
 (function() {
-  function Todoitem($firebaseArray) {
+  function TodoItem($firebaseArray) {
     var ref = firebase.database().ref().child("todoitems");
     var todoitems = $firebaseArray(ref);
 
@@ -14,5 +14,5 @@
 
   angular
     .module('blocitoffAngular')
-    .factory('Todoitem', ['$firebaseArray', Todoitem]);
+    .factory('TodoItem', ['$firebaseArray', TodoItem]);
 })();
