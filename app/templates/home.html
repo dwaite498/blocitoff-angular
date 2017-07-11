@@ -2,6 +2,12 @@
 
 <p>Testing list of task items<p>
 
-<ul ng-repeat="items in todoItem">
-  <li>{{ items }}</li>
+<ul ng-repeat="items in home.todoItem">
+  <li>{{ items.$value }}</li>
 </ul>
+
+<div>
+  <input type="text" ng-model="home.newitem"></input>
+  <button ng-click="home.submit()">fake data</button>
+  <span ng-bind="home.newitem"> </span>
+</div>

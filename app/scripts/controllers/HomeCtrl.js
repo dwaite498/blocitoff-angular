@@ -1,9 +1,14 @@
 (function() {
-    function HomeCtrl($scope, TodoItem) {
-      $scope.todoItem = TodoItem.all;
+    function HomeCtrl(TodoItem) {
+      this.todoItem = TodoItem.all;
+      this.newitem = "real data";
+      this.submit = function() {
+          TodoItem.addtodo(this.newitem);
+      };
+
     }
 
     angular
         .module('blocitoffAngular')
-        .controller('HomeCtrl',  ['$scope', 'TodoItem', HomeCtrl]);
+        .controller('HomeCtrl',  ['TodoItem', HomeCtrl]);
 })();
