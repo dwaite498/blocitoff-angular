@@ -7,13 +7,12 @@
           <th>Name</th>
           <th>Time till expiration</th>
         </tr>
-        <tbody >
-          <tr ng-repeat="items in home.todoItem">
-            <td>{{ items.$value }}</td>
-          </tr>
+      </thead>
 
-          <tr>
-            <td></td>
+        <tbody>
+          <tr ng-repeat="item in home.todoItem">
+            <td>{{ item.name }} </td>
+            <td> {{ item.created_at }}</td>
           </tr>
         </tbody>
     </table>

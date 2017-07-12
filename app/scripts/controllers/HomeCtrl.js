@@ -1,10 +1,13 @@
 (function() {
     function HomeCtrl(TodoItem) {
-      this.todoItem = TodoItem.all;
+      this.todoItem = TodoItem.validTodos;
       this.newitem = "";
       this.submit = function() {
           TodoItem.addtodo(this.newitem);
       };
+
+
+
 
     }
 
