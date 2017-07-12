@@ -7,8 +7,18 @@
       <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
-     <ui-view></ui-view>
-
+     <nav class="navbar navbar-default">
+       <div class="container container-fluid">
+        <a class="navbar-brand" href="/">Blocitoff</a>
+       </div>
+    </nav>
+    <div class="container" align="center">
+      <span class="col-xs-3"></span>
+      <div class="col-xs-6 app-box">
+        <ui-view></ui-view>
+      </div>
+    </div>
+    <span class="col-xs-3"></span>
     <!-- Angular -->
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
