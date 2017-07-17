@@ -8,7 +8,6 @@
 
       this.oldestDate = Date.now() - 86400000;
 
-
     }
 
     angular

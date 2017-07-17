@@ -10,7 +10,7 @@
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in home.todoItem" ng-hide="item.created_at < home.oldestDate" >
+          <tr ng-repeat="item in home.todoItem" ng-hide="item.created_at > home.oldestDate" >
             <td>{{ item.name }} </td>
             <td> {{ item.created_at }}</td>
           </tr>
