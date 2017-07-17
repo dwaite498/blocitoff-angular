@@ -11,6 +11,12 @@
                    url: '/',
                    controller: 'HomeCtrl as home',
                    templateUrl: '/templates/home.html'
+               })
+
+               .state('expireditems', {
+                 url: '/expireditems',
+                 controller: 'ExpiredItemsCtrl as expired',
+                 templateUrl: '/templates/expireditems.html'
                });
   }
 

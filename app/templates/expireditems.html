@@ -10,18 +10,11 @@
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in home.todoItem" ng-hide="item.created_at < home.oldestDate" >
+          <tr ng-repeat="item in expired.todoItem" ng-hide="item.created_at >= expired.oldestDate" >
             <td>{{ item.name }} </td>
             <td> {{ item.created_at }}</td>
           </tr>
         </tbody>
     </table>
   </div>
-
-  <form class="navbar-form" role="search">
-    <div class="form-group">
-      <input  type="text" class="form-control" ng-model="home.newitem" placeholder="New Todo"></input>
-      <button ng-click="home.submit()" class="btn btn-default">Add Todo Item</button>
-    </div>
-  </form>
 </div>
