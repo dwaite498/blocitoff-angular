@@ -2,11 +2,11 @@
   function TodoItem($firebaseArray) {
     var ref = firebase.database().ref().child("todoitems");
     var todoitems = $firebaseArray(ref);
-    var validTodos = [];
     function addtodo(name) {
-      var date = new Date();
-      var newDate = Date.parse(date);
-      todoitems.$add({name: name, created_at: newDate});
+      var date = Date.now();
+      var expireDate = date + 604800000;
+      console.log(date, expireDate, name)
+      todoitems.$add({name: name, created_at: date, expires_at: expireDate});
     }
 
 

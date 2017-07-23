@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-  <h1 class="panel-heading">Current Tasks</h1>
+  <h1 class="panel-heading">Expired Tasks</h1>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
@@ -10,7 +10,7 @@
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in expired.todoItem" ng-hide="item.created_at >= expired.oldestDate" >
+          <tr ng-repeat="item in expired.todoItem" ng-show="item.created_at <= expired.oldestDate" >
             <td>{{ item.name }} </td>
             <td> {{ item.created_at }}</td>
           </tr>
