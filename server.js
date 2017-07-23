@@ -1,7 +1,8 @@
 var Hapi = require('hapi'),
     path = require('path'),
+    address = process.env.IP || "0.0.0.0",
     port = process.env.PORT || 3000,
-    server = new Hapi.Server(port),
+    server = new Hapi.Server(address, port),
     routes = {
         css: {
             method: 'GET',
