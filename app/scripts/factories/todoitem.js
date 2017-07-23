@@ -3,10 +3,9 @@
     var ref = firebase.database().ref().child("todoitems");
     var todoitems = $firebaseArray(ref);
     function addtodo(name) {
-      var date = Date.now();
-      var expireDate = date + 604800000;
-      console.log(date, expireDate, name)
-      todoitems.$add({name: name, created_at: date, expires_at: expireDate});
+      var date = moment().format();
+      console.log(date, name);
+      todoitems.$add({name: name, created_at: date});
     }
 
 

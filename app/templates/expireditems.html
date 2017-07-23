@@ -5,14 +5,14 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Time till expiration</th>
+          <th>Time since expiration</th>
         </tr>
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in expired.todoItem" ng-show="item.created_at <= expired.oldestDate" >
+          <tr ng-repeat="item in expired.todoItem" ng-hide="expired.shouldHide(item)">
             <td>{{ item.name }} </td>
-            <td> {{ item.created_at }}</td>
+            <td>{{ item.created_at|TimeSinceExpiration }}</td>
           </tr>
         </tbody>
     </table>
