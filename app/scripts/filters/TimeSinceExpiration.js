@@ -6,7 +6,7 @@
             return moment().to(expires_at_moment)
         }
     }
-    
+
     angular
         .module('blocitoffAngular')
         .filter('TimeSinceExpiration', TimeSinceExpiration)
