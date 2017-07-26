@@ -10,6 +10,13 @@
           var sevenDaysAgo = moment().subtract(1, "week")
           return moment(item.created_at).isBefore(sevenDaysAgo)
       };
+
+      this.markComplete = function(item) {
+        item.completed = true;
+        item.save;
+        return item
+
+      };
     }
 
     angular

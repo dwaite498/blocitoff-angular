@@ -10,7 +10,7 @@
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in expired.todoItem" ng-hide="expired.shouldHide(item)">
+          <tr ng-repeat="item in expired.todoItem" ng-show="expired.shouldHide(item)||item.completed">
             <td>{{ item.name }} </td>
             <td>{{ item.created_at|TimeSinceExpiration }}</td>
           </tr>
