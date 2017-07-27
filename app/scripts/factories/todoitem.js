@@ -2,24 +2,30 @@
     function TodoItem($firebaseArray) {
       var ref = firebase.database().ref().child("todoitems");
       var todoitems = $firebaseArray(ref);
-
+    console.log(todoitems);
+      
     function addtodo(name) {
+      console.log(name);
       var date = moment().format();
-      console.log(date, name);
-      todoitems.$add({name: name, created_at: date, completed: false});
-    };
+      todoitems.push({name: name, created_at: date, completed: false});
+    }
 
-    function markComplete() {
-      todoitems.$loaded().then(function() {
-        todoitem.complete = true;
-      });
-    };
+    function markComplete(task) {
+      console.log(task);
+        if (task.complete == "true") {
+          task.complete = "false";
+        }
+        else {
+          task.complete = "true";
+        }
+      todoitems.$save(task);
+    }
 
 
     return {
       all: todoitems,
       addtodo: addtodo,
-      markComplete : markComplete
+      markComplete: markComplete
     };
   }
 

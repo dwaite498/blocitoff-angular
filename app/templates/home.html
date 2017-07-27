@@ -10,10 +10,10 @@
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in home.todoItem" ng-hide="home.shouldHide(item)||item.completed">
+          <tr ng-repeat="item in home.todoItem" ng-hide="home.shouldHide(item)||item.completed == true">
             <td>{{ item.name }} </td>
             <td>{{ item.created_at|TimeToExpiration }}</td>
-            <td><input type="checkbox" ng-click="home.completed(item)">{{ item.completed }}</input></td>
+            <td><input type="checkbox" ng-click="home.markComplete(item)">{{ item.completed }}</input></td>
           </tr>
         </tbody>
     </table>
