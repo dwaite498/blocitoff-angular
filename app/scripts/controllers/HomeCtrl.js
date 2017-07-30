@@ -6,9 +6,9 @@
           TodoItem.addtodo(this.newitem);
       };
 
-      this.shouldHide = function(item) {
+      this.shouldShow = function(item) {
           var sevenDaysAgo = moment().subtract(1, "week")
-          return moment(item.created_at).isBefore(sevenDaysAgo)
+          return moment(item.created_at).isAfter(sevenDaysAgo)&&item.completed === false;
       };
 
       this.markComplete = TodoItem.markComplete;

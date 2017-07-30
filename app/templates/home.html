@@ -6,11 +6,12 @@
         <tr>
           <th>Name</th>
           <th>Time till expiration</th>
+          <th>Mark Complete</th>
         </tr>
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in home.todoItem" ng-hide="home.shouldHide(item)||item.completed == true">
+          <tr ng-repeat="item in home.todoItem" ng-show="home.shouldShow(item)">
             <td>{{ item.name }} </td>
             <td>{{ item.created_at|TimeToExpiration }}</td>
             <td><input type="checkbox" ng-click="home.markComplete(item)">{{ item.completed }}</input></td>

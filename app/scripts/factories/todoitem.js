@@ -5,18 +5,16 @@
     console.log(todoitems);
       
     function addtodo(name) {
-      console.log(name);
       var date = moment().format();
-      todoitems.push({name: name, created_at: date, completed: false});
+      todoitems.$add({name: name, created_at: date, completed: false});
     }
 
     function markComplete(task) {
-      console.log(task);
-        if (task.complete == "true") {
-          task.complete = "false";
+        if (task.completed == true) {
+          task.completed = false;
         }
         else {
-          task.complete = "true";
+          task.completed = true;
         }
       todoitems.$save(task);
     }

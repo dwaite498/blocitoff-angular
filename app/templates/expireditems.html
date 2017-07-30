@@ -6,13 +6,15 @@
         <tr>
           <th>Name</th>
           <th>Time since expiration</th>
+          <th>Task Completed</th>
         </tr>
       </thead>
 
         <tbody>
-          <tr ng-repeat="item in expired.todoItem" ng-show="expired.shouldHide(item)||item.completed">
+          <tr ng-repeat="item in expired.todoItem" ng-show="expired.hasExpired(item)">
             <td>{{ item.name }} </td>
             <td>{{ item.created_at|TimeSinceExpiration }}</td>
+            <td>{{ item.completed }}</td>
           </tr>
         </tbody>
     </table>

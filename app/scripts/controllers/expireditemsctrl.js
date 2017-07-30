@@ -2,9 +2,9 @@
   function ExpiredItemsCtrl(TodoItem) {
     this.todoItem = TodoItem.all;
 
-    this.shouldHide = function(item) {
+    this.hasExpired = function(item) {
         var sevenDaysAgo = moment().subtract(1, "week")
-        return moment(item.created_at).isSameOrAfter(sevenDaysAgo)
+        return moment(item.created_at).isBefore(sevenDaysAgo)||item.completed === true;
     };
 
   }
